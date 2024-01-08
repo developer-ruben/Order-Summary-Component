@@ -1,0 +1,220 @@
+/* || VARIABLES */
+
+:root {
+  --color-primary-pale-blue: hsl(225, 100%, 94%);
+  --color-primary-bright-blue: hsl(245, 75%, 52%);
+  --color-neutral-Very-pale-blue: hsl(225, 100%, 98%);
+  --color-neutral-desaturated-blue: hsl(224, 23%, 55%);
+  --color-neutral-dark-blue: hsl(223, 47%, 23%);
+  --color-neutral-white: hsl(255, 0%, 100%);
+  --color-neutral-purple: hsl(245, 83%, 68%);
+  --font-family: "Red Hat Display", sans-serif;
+}
+
+/* || RESET */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* || GENERAL STYLES */
+
+body {
+  padding: 2.4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--color-primary-pale-blue);
+  background-image: url("./images/pattern-background-desktop.svg");
+  background-repeat: no-repeat;
+  font-size: 1.6rem;
+  font-family: var(--font-family);
+  font-weight: 500;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.button {
+  padding: 1.5rem;
+  cursor: pointer;
+  border: 0;
+  font: inherit;
+  font-size: 1.5rem;
+  font-weight: 900;
+}
+
+.button--primary {
+  box-shadow: 0px 20px 20px 0 hsla(245, 75%, 52%, 0.1903);
+  background-color: var(--color-primary-bright-blue);
+  border-radius: 1.1rem;
+  color: white;
+}
+
+.button--primary:hover {
+  background-color: var(--color-neutral-purple);
+}
+
+.button--secondary {
+  padding: 0;
+  background: none;
+  color: var(--color-neutral-desaturated-blue);
+}
+
+.button--secondary:hover {
+  color: var(--color-neutral-dark-blue);
+}
+
+/* || CARD */
+
+.card {
+  box-shadow: 0 40px 40px 0 hsla(228, 87%, 40%, 0.1518);
+  overflow: auto;
+  width: min(100%, 450px);
+  background-color: var(--color-neutral-white);
+  border-radius: 2rem;
+}
+
+.card__body {
+  padding: 4.5rem 4.8rem;
+}
+
+.card__title {
+  margin-bottom: 1.7rem;
+  font-size: 2.8rem;
+  color: var(--color-neutral-dark-blue);
+  text-align: center;
+}
+
+.card__text {
+  margin-bottom: 2rem;
+  line-height: 2.6rem;
+  color: var(--color-neutral-desaturated-blue);
+  text-align: center;
+}
+
+.card__list {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 3.2rem;
+}
+
+.card__item {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 2.5rem 2.4rem;
+  background-color: var(--color-neutral-Very-pale-blue);
+  border-radius: 1.1rem;
+}
+
+.card__item-name {
+  display: block;
+  margin-bottom: 0.6rem;
+  font-weight: 900;
+  color: var(--color-neutral-dark-blue);
+}
+
+.card__item-price {
+  color: var(--color-neutral-desaturated-blue);
+}
+
+.card__item-link {
+  margin-left: auto;
+  font-weight: 700;
+  color: var(--color-primary-bright-blue);
+}
+
+.card__item-link:hover {
+  color: var(--color-neutral-purple);
+  text-decoration: none;
+}
+
+.card__buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+}
+
+/* || ATTRIBUTION */
+
+.attribution {
+  position: fixed;
+  bottom: 0;
+  padding: 0.8rem;
+  background-color: var(--color-neutral-Very-pale-blue);
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  font-size: 1.1rem;
+  text-align: center;
+}
+.attribution__link {
+  color: var(--color-primary-bright-blue);
+}
+
+.attribution__link:hover {
+  color: var(--color-neutral-purple);
+  text-decoration: none;
+}
+
+/* || MEDIA QUERIES */
+
+@media only screen and (max-width: 375px) {
+  body {
+    background-image: url("./images/pattern-background-mobile.svg");
+    font-size: 1.5rem;
+  }
+
+  .card__body {
+    padding: 3.2rem;
+  }
+
+  .card__title {
+    font-size: 2.2rem;
+    margin-bottom: 1.6rem;
+  }
+
+  .card__text {
+    line-height: 2.5rem;
+    margin-bottom: 2.4rem;
+  }
+
+  .card__item {
+    padding: 1.7rem 1.6rem;
+  }
+
+  .card__item-name,
+  .card__item-price {
+    font-size: 1.4rem;
+  }
+
+  .card__item-link {
+    font-size: 1.3rem;
+  }
+
+  .card__buttons {
+    gap: 2.4rem;
+  }
+
+  .attribution {
+    display: none;
+  }
+}
